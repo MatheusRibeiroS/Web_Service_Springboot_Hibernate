@@ -18,11 +18,10 @@ public enum OrderStatusEnum {
     }
 
     public static OrderStatusEnum valueOf(int code) {
-        for(OrderStatusEnum value: OrderStatusEnum.values()) {
-            if(value.getCode() == code) {
+        for (OrderStatusEnum value: OrderStatusEnum.values()) {
+            if (value.getCode() == code) {
                 return value;
             }
-            throw new IllegalArgumentException("Invalid OrderStatus code");
         }
         throw new IllegalArgumentException("Invalid OrderStatus code");
     }

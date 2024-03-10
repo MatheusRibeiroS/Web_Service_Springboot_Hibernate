@@ -16,7 +16,7 @@ public class Order implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
-    private Integer OrderStatus;
+    private Integer orderStatus;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
@@ -68,12 +68,12 @@ public class Order implements Serializable {
     }
 
     public OrderStatusEnum getOrderStatus() {
-        return OrderStatusEnum.valueOf(OrderStatus);
+        return OrderStatusEnum.valueOf(orderStatus);
     }
 
     public void setOrderStatus(OrderStatusEnum orderStatus) {
-        if (OrderStatus != null) {
-            OrderStatus = orderStatus.getCode();
+        if (orderStatus != null) {
+            this.orderStatus = orderStatus.getCode();
         }
     }
 }
